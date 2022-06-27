@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Assignment3UserValidation {
-	public static User[] users = new User[5]; 
+	public static User[] users = new User[4]; 
 	private static UserService userService = new UserService();
 
 	public static void main(String[] args) throws IOException {
