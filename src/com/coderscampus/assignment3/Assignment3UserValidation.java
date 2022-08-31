@@ -1,16 +1,21 @@
 package com.coderscampus.assignment3;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Assignment3UserValidation {
-	public static User[] users = new User[4]; 
-	private static UserService userService = new UserService();
+	public User[] users = new User[4]; 
+	private UserService userService = new UserService();
+	
+	UserArrayService userArrayService = new UserArrayService();
 
 	public static void main(String[] args) throws IOException {
-		userArray();
+		Assignment3UserValidation a3uv = new Assignment3UserValidation();
+		a3uv.doWork();
+		
+	}
+	
+	public void doWork () throws IOException {
 		
 		Scanner scanner = null;
 		try {
@@ -40,22 +45,7 @@ public class Assignment3UserValidation {
 			if (scanner != null)
 				scanner.close();
 		}
-	}
-
-	private static void userArray() throws IOException {
-
-		BufferedReader bufferedReader = null;
-		try {
-			bufferedReader = new BufferedReader(new FileReader("data.txt"));
-			String info;
-			int i = 0;
-			while ((info = bufferedReader.readLine()) != null) {
-				users[i] = new User(info.split(","));
-				i = i + 1;
-			}
-		} finally {
-			if (bufferedReader != null) 
-				bufferedReader.close();
-		}
+	
 	}
 }
+
